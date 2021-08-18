@@ -1,7 +1,13 @@
-function later(func, funcArg) {
-  return () => func(funcArg);
+"use strict";
+
+function bind(context, func) {
+  return () => func.call(context);
 }
 
-const logger = message => console.log(message);
-let logWarning = later(logger, "The system is shutting down!");
-logWarning(); // The system is shutting down!
+let obj = {};
+let boundFunc = bind(obj, function() {
+  this.foo = "bar";
+});
+
+boundFunc();
+console.log(obj); // { foo: 'bar' }
