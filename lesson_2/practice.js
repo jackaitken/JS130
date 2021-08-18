@@ -1,7 +1,7 @@
-bar();
-
-var foo = 'hello';
-
-function bar() {
-  console.log(foo);
+function later(func, funcArg) {
+  return () => func(funcArg);
 }
+
+const logger = message => console.log(message);
+let logWarning = later(logger, "The system is shutting down!");
+logWarning(); // The system is shutting down!
