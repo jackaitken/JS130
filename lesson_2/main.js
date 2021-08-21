@@ -1,2 +1,1 @@
-const otherFunc = require('./practice');
-otherFunc();
+console.log(Object.getPrototypeOf(ReferenceError));

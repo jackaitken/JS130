@@ -1,5 +1,9 @@
-function func() {
-  console.log('Hello from the other file');
-}
+import { bar } from "./bar";
 
-module.exports = func;
+let xyz = 1; // not exported
+
+export function foo() {
+  console.log(xyz);
+  xyz += 1;
+  bar();
+}
