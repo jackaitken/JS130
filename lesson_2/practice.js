@@ -1,9 +1,11 @@
-import { bar } from "./bar";
+let arr = [];
 
-let xyz = 1; // not exported
-
-export function foo() {
-  console.log(xyz);
-  xyz += 1;
-  bar();
+function push(value) {
+  arr.push(value);
 }
+
+function pop() {
+  return arr.pop();
+}
+
+module.exports = { push, pop, arr };
