@@ -1,30 +1,22 @@
-class SumOfMultiples {
-  constructor(...nums) {
-    [ this.num1, this.num2, this.num3 ] = nums;
-  }
+function Pet(name, image) {
+  this.name = name;
+  this.image =  image;
+}
 
-  static to(num) {
-    return new SumOfMultiples().to(num);
-  }
+var Image;
+var catImage;
+var pudding;
 
-  to(num) {
-    if (!this.num1) {
-      this.num1 = 3;
-      this.num2 = 5;
-    }
+Pet.prototype.walk = function() {
+  console.log(`${this.name} is walking.`);
+};
 
-    let sum = 0;
 
-    for (let i = this.num1; i < num; i++) {
-      if (i % this.num1 === 0 || i % this.num2 === 0 || 
-          i % this.num3 === 0) {
-        sum += i;
-      }
-    }
-    return sum;
+Image = class {
+  constructor(file) {
+    this.file = file;
   }
 }
 
-let num = new SumOfMultiples(43, 47)
-
-console.log(num.to(10000));
+catImage = new Image("cat.png");
+pudding = new Pet("Pudding", catImage);
