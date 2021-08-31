@@ -1,24 +1,30 @@
-class Octal {
-  constructor(octal) {
-    this.octal = octal;
+class SumOfMultiples {
+  constructor(...nums) {
+    [ this.num1, this.num2, this.num3 ] = nums;
   }
 
-  toDecimal() {
-    let power = this.octal.length - 1;
+  static to(num) {
+    return new SumOfMultiples().to(num);
+  }
+
+  to(num) {
+    if (!this.num1) {
+      this.num1 = 3;
+      this.num2 = 5;
+    }
+
     let sum = 0;
 
-    for (let i = 0; i < this.octal.length; i++) {
-      let num = Number(this.octal[i]);
-      if (num >= 8 || Number.isNaN(num)) {
-        return 0;
-      } else {
-        sum += (num * (8 ** power));
-        power -= 1;
+    for (let i = this.num1; i < num; i++) {
+      if (i % this.num1 === 0 || i % this.num2 === 0 || 
+          i % this.num3 === 0) {
+        sum += i;
       }
     }
     return sum;
   }
 }
 
-let oct = new Octal('abcd');
-console.log(oct.toDecimal());
+let num = new SumOfMultiples(43, 47)
+
+console.log(num.to(10000));
