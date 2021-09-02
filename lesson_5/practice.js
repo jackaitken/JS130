@@ -1,22 +1,12 @@
-function Pet(name, image) {
-  this.name = name;
-  this.image =  image;
+function foo1() {
+  var Bar;
+  let bar = new Bar();
+  const Bar = class {};
 }
 
-var Image;
-var catImage;
-var pudding;
-
-Pet.prototype.walk = function() {
-  console.log(`${this.name} is walking.`);
-};
-
-
-Image = class {
-  constructor(file) {
-    this.file = file;
-  }
+function foo2() {
+  let bar = new Bar();
 }
 
-catImage = new Image("cat.png");
-pudding = new Pet("Pudding", catImage);
+foo1();
+foo2();
