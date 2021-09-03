@@ -1,12 +1,6 @@
-function foo1() {
-  var Bar;
-  let bar = new Bar();
-  const Bar = class {};
+function func() {
+  let [ ...args ] = arguments;
+  console.log(args);
 }
 
-function foo2() {
-  let bar = new Bar();
-}
-
-foo1();
-foo2();
+func(1, 2, 3);
