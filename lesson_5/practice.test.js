@@ -34,6 +34,10 @@ describe('Testing stack operations', () => {
     expect(stack.size()).toEqual(3);
   });
 
+  test('Peek returns message with empty stack', () => {
+    expect(stack.peek()).toEqual('Stack is empty');
+  });
+
   test('Size returns actual size of stack', () => {
     for (let i = 0; i < 25; i++) {
       stack.push(i);

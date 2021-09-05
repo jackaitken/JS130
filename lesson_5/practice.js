@@ -1,27 +1,12 @@
-class Stack {
-  constructor() {
-    this.stack = [];
+function foo(y) {
+  function bar(w = 0) {
+    return w + x + y + z;
   }
-
-  push(num) {
-    this.stack.push(num);
-  }
-
-  pop() {
-    return this.stack.pop();
-  }
-
-  isEmpty() {
-    return this.stack.length === 0;
-  }
-
-  peek() {
-    return this.stack[this.stack.length - 1] || 'Stack is empty';
-  }
-
-  size() {
-    return this.stack.length;
-  }
+  var z;
+  z = 10;
+  return bar();
 }
 
-module.exports = Stack;
+const x;
+x = 30;
+console.log(foo(2)); // 42
